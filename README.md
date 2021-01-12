@@ -1,5 +1,5 @@
 # Minimal raylib + Meson C/C++ template
-Template project for C/C++ applications using [raylib](https://www.raylib.com/) built using [Meson](https://mesonbuild.com/).
+Minimal template project for C/C++ applications using [raylib](https://www.raylib.com/) built using [Meson](https://mesonbuild.com/).
 
 ## Setting up
 Native builds:
@@ -14,7 +14,7 @@ Web builds:
     # compile with
     $ meson compile -C build/web
 
-Cross-compiled Windows 32 builds using [MinGW](http://mingw.org):
+Cross-compiled Windows builds using [MinGW](http://mingw.org):
 
     $ meson setup --cross-file cross-file/windows32.ini build/win32
     # compile with
