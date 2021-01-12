@@ -18,15 +18,22 @@ raylib_opts.add_cmake_defines({
   # Add other CMake options for Raylib, if needed
 })
 if cc.get_id() == 'emscripten'
-  raylib_opts.add_cmake_defines({'PLATFORM': 'Web'})
+  raylib_opts.add_cmake_defines({
+    'PLATFORM': 'Web',
+  })
 else
-  raylib_opts.add_cmake_defines({'PLATFORM': 'Desktop'})
+  raylib_opts.add_cmake_defines({
+    'PLATFORM': 'Desktop',
+  })
 endif
 raylib_subproject = cmake.subproject('raylib', options: raylib_opts)
 dependencies += raylib_subproject.dependency('raylib_static')
 
 # General configuration
 if host_machine.system() == 'windows'
+  dependencies += [
+    cc.find_library('winmm'),
+  ]
 elif host_machine.system() == 'darwin'
 elif host_machine.system() == 'linux'
   dependencies += [
