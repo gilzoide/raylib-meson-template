@@ -27,7 +27,7 @@ else
   })
 endif
 raylib_subproject = cmake.subproject('raylib', options: raylib_opts)
-dependencies += raylib_subproject.dependency('raylib_static')
+dependencies += raylib_subproject.dependency('raylib')
 
 # General configuration
 if host_machine.system() == 'windows'
