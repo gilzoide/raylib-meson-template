@@ -35,7 +35,10 @@ if host_machine.system() == 'windows'
     cc.find_library('winmm'),
   ]
 elif host_machine.system() == 'darwin'
-  # TODO
+  link_args += [
+    '-framework', 'AppKit',
+    '-framework', 'IOKit',
+  ]
 elif host_machine.system() == 'linux'
   dependencies += [
     cc.find_library('m'),
